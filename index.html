@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bluebell Pilates | 1:1 Reformer Pilates Studio in Sharpthorne, West Sussex</title>
+  <meta
+    name="description"
+    content="Bluebell Pilates is a boutique home studio in Sharpthorne, West Sussex offering one-to-one Reformer Pilates with Shelley. Suitable for all ages and abilities — balance, strength, bloom."
+  />
+  <meta name="theme-color" content="#374478" />
+  <meta name="author" content="Bluebell Pilates" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bluebell Pilates | 1:1 Reformer Pilates" />
+  <meta
+    property="og:description"
+    content="Boutique one-to-one Reformer Pilates in Sharpthorne, West Sussex. Suitable for all ages and abilities."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/background.jpeg" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+
+  <!-- Fonts: elegant display + clean sans + classic serif body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Marcellus&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS (Play CDN — no build step, ideal for static GitHub Pages hosting) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pale: "#d6e0e2",
+            med: "#a3b9c4",
+            deep: "#5b76ae",
+            dark: "#374478",
+            sage: "#b4c0a8",
+            cream: "#f6f3ed",
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', "serif"],
+            sans: ['"Jost"', "ui-sans-serif", "system-ui", "sans-serif"],
+            body: ['"Marcellus"', "serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+    body {
+      background-color: #f6f3ed;
+    }
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+    /* Subtle scroll-reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* Letter-spaced eyebrow labels */
+    .eyebrow {
+      letter-spacing: 0.28em;
+    }
+  </style>
+</head>
+
+<body class="font-body text-dark antialiased selection:bg-med/40">
+  <a
+    href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-dark focus:px-5 focus:py-2 focus:font-sans focus:text-sm focus:text-cream"
+  >
+    Skip to content
+  </a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header
+    id="site-header"
+    class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+  >
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+      <a href="#home" class="flex items-baseline gap-1 font-display text-2xl leading-none text-dark">
+        <span class="font-medium">bluebell</span><span class="italic text-deep">pilates</span>
+      </a>
+
+      <!-- Desktop menu -->
+      <ul class="hidden items-center gap-9 font-sans text-sm font-light tracking-wide text-dark/80 md:flex">
+        <li><a class="transition-colors hover:text-deep" href="#about">About</a></li>
+        <li><a class="transition-colors hover:text-deep" href="#gallery">Gallery</a></li>
+        <li><a class="transition-colors hover:text-deep" href="#classes">Classes</a></li>
+        <li><a class="transition-colors hover:text-deep" href="#pricing">Pricing</a></li>
+        <li>
+          <a
+            class="rounded-full bg-dark px-5 py-2.5 text-cream transition-colors hover:bg-deep"
+            href="#contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+
+      <!-- Mobile toggle -->
+      <button
+        id="menu-toggle"
+        class="flex h-10 w-10 items-center justify-center rounded-full text-dark md:hidden"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div
+      id="mobile-menu"
+      class="hidden origin-top border-t border-med/30 bg-cream/95 backdrop-blur md:hidden"
+    >
+      <ul class="flex flex-col gap-1 px-6 py-4 font-sans text-base font-light text-dark">
+        <li><a class="block rounded-lg px-3 py-3 hover:bg-pale" href="#about" data-mobile-link>About</a></li>
+        <li><a class="block rounded-lg px-3 py-3 hover:bg-pale" href="#gallery" data-mobile-link>Gallery</a></li>
+        <li><a class="block rounded-lg px-3 py-3 hover:bg-pale" href="#classes" data-mobile-link>Classes</a></li>
+        <li><a class="block rounded-lg px-3 py-3 hover:bg-pale" href="#pricing" data-mobile-link>Pricing</a></li>
+        <li><a class="block rounded-lg px-3 py-3 hover:bg-pale" href="#contact" data-mobile-link>Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <img
+        src="images/background.jpeg"
+        alt="The Bluebell Pilates boutique home studio with a Reformer bed, natural light and calming blue-grey tones"
+        class="absolute inset-0 h-full w-full object-cover"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-dark/55 via-dark/35 to-dark/60"></div>
+
+      <div class="relative z-10 mx-auto max-w-3xl px-6 text-center text-cream">
+        <p class="eyebrow mb-6 font-sans text-xs font-light uppercase text-cream/90 sm:text-sm">
+          1:1 Reformer Pilates &middot; West Sussex
+        </p>
+        <h1 class="font-display text-4xl font-medium leading-tight sm:text-6xl lg:text-7xl">
+          There&apos;s Never Been A<br class="hidden sm:block" />
+          Better Time To Begin
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl font-body text-lg text-cream/90 sm:text-xl">
+          Boutique one-to-one Reformer Pilates in a calm, welcoming home studio &mdash;
+          for balance, strength and wellbeing at every age and ability.
+        </p>
+        <div class="mt-10">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 rounded-full bg-cream px-8 py-4 font-sans text-sm font-medium tracking-wide text-dark shadow-lg transition-all hover:bg-white hover:shadow-xl"
+          >
+            Please click to contact me
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- scroll cue -->
+      <a href="#about" aria-label="Scroll to about section" class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-cream/80 transition-colors hover:text-cream">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div class="reveal order-2 lg:order-1">
+          <p class="eyebrow mb-4 font-sans text-xs font-light uppercase text-deep">About Bluebell Pilates</p>
+          <h2 class="font-display text-4xl font-medium leading-tight text-dark sm:text-5xl">
+            A calm, welcoming studio for every body
+          </h2>
+          <div class="mt-6 space-y-5 font-body text-lg leading-relaxed text-dark/80">
+            <p>
+              I qualified as a mat Pilates instructor back in 2014 and enjoyed teaching classes,
+              one-to-ones and small groups.
+            </p>
+            <p>
+              I then discovered Reformer Pilates which I love with a passion! I extended my training
+              and qualifications and continue to learn each day. Each client is different, how they
+              may feel that particular day is different and no session is ever the same. I now teach
+              one-to-one sessions in my boutique home studio in Sharpthorne, West Sussex.
+            </p>
+            <p>
+              I love working with clients of all ages and abilities and the challenge of developing a
+              training programme to meet each individual&apos;s unique needs and goals in an
+              environment that is both stimulating and relaxing.
+            </p>
+          </div>
+
+          <ul class="mt-8 flex flex-wrap gap-3 font-sans text-sm font-light text-dark">
+            <li class="rounded-full bg-pale px-4 py-2">Beginners welcome</li>
+            <li class="rounded-full bg-sage/50 px-4 py-2">Rehabilitation friendly</li>
+            <li class="rounded-full bg-med/40 px-4 py-2">All ages &amp; abilities</li>
+          </ul>
+        </div>
+
+        <div class="reveal order-1 lg:order-2">
+          <div class="relative">
+            <img
+              src="images/Teacher.jpeg"
+              alt="Shelley, founder and Reformer Pilates instructor at Bluebell Pilates"
+              class="w-full rounded-2xl object-cover shadow-xl"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-5 -left-5 hidden rounded-xl bg-cream px-6 py-4 shadow-lg sm:block">
+              <p class="font-display text-2xl italic text-deep">Shelley</p>
+              <p class="font-sans text-xs font-light uppercase tracking-widest text-dark/60">Instructor &amp; Founder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="bg-white/60 py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="eyebrow mb-4 font-sans text-xs font-light uppercase text-deep">Gallery</p>
+          <h2 class="font-display text-4xl font-medium leading-tight text-dark sm:text-5xl">
+            Moments from the studio
+          </h2>
+          <p class="mt-4 font-body text-lg text-dark/70">
+            A glimpse of the space, the equipment and the sessions. Select any image to enlarge.
+          </p>
+        </div>
+
+        <div class="reveal mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <!-- gallery items injected/enhanced by JS lightbox; static markup for no-JS fallback -->
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client1.jpeg">
+            <img src="images/client1.jpeg" alt="Client during a Reformer Pilates session at Bluebell Pilates" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client2.jpeg">
+            <img src="images/client2.jpeg" alt="Reformer Pilates exercise focusing on core strength and balance" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client3.jpeg">
+            <img src="images/client3.jpeg" alt="Controlled, supported movement on the Pilates Reformer" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client4.jpeg">
+            <img src="images/client4.jpeg" alt="Stretching and posture work during a one-to-one Pilates session" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client5.jpeg">
+            <img src="images/client5.jpeg" alt="Reformer Pilates strengthening exercise in the boutique studio" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client6.jpeg">
+            <img src="images/client6.jpeg" alt="Guided Pilates movement supporting balance and mobility" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client7.jpeg">
+            <img src="images/client7.jpeg" alt="Reformer Pilates session tailored to individual goals" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item group relative aspect-[3/4] overflow-hidden rounded-xl" data-full="images/client8.jpeg">
+            <img src="images/client8.jpeg" alt="A relaxing yet challenging Pilates session at Bluebell Pilates" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLASSES ============ -->
+    <section id="classes" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div class="reveal">
+          <p class="eyebrow mb-4 font-sans text-xs font-light uppercase text-deep">Classes</p>
+          <h2 class="font-display text-4xl font-medium leading-tight text-dark sm:text-5xl">
+            One to One Reformer Sessions with Shelley
+          </h2>
+          <p class="mt-6 font-body text-lg leading-relaxed text-dark/80">
+            The beauty of this exercise system is it focuses on strengthening the core and balance in
+            a controlled way that is suitable for rehabilitation after injury &mdash; which is how the
+            system was developed &mdash; through to advanced level exercises that trained athletes will
+            find challenging.
+          </p>
+          <p class="mt-5 font-body text-lg leading-relaxed text-dark/80">
+            The Reformer bed equipment is designed to support and uses springs in a really clever way,
+            gradually increasing intensity in some exercises and supporting in others &mdash; working
+            at lots of different levels, no matter your age, size or shape.
+          </p>
+        </div>
+
+        <div class="reveal grid gap-5 sm:grid-cols-2">
+          <article class="rounded-2xl bg-pale/60 p-7">
+            <h3 class="font-display text-2xl text-dark">Pre &amp; Post Natal</h3>
+            <p class="mt-3 font-body leading-relaxed text-dark/75">
+              The Reformer Pilates system is an excellent way to help your body before and after
+              childbirth. You are very welcome to bring your baby to sessions.
+            </p>
+          </article>
+          <article class="rounded-2xl bg-sage/40 p-7">
+            <h3 class="font-display text-2xl text-dark">Any Age</h3>
+            <p class="mt-3 font-body leading-relaxed text-dark/75">
+              The Reformer can support as well as challenge. Many people start in retirement,
+              discovering the amazing benefits, and are still enjoying it into their 90s!
+            </p>
+          </article>
+          <article class="rounded-2xl bg-med/30 p-7">
+            <h3 class="font-display text-2xl text-dark">Posture &amp; Relief</h3>
+            <p class="mt-3 font-body leading-relaxed text-dark/75">
+              Long hours at a desk can tighten shoulders and neck and hunch our posture. The exercises
+              stretch you out, engage your core and leave you relaxed and refreshed.
+            </p>
+          </article>
+          <article class="rounded-2xl bg-deep/15 p-7">
+            <h3 class="font-display text-2xl text-dark">All Levels</h3>
+            <p class="mt-3 font-body leading-relaxed text-dark/75">
+              From gentle rehabilitation to challenging athletic work, every programme is tailored to
+              your unique needs, goals and how you feel that day.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section id="pricing" class="bg-dark py-24 text-cream lg:py-32">
+      <div class="mx-auto max-w-6xl px-6 lg:px-10">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="eyebrow mb-4 font-sans text-xs font-light uppercase text-med">Pricing</p>
+          <h2 class="font-display text-4xl font-medium leading-tight sm:text-5xl">Sessions &amp; packages</h2>
+          <p class="mt-4 font-body text-lg text-cream/70">All sessions are 50 minutes, one-to-one with Shelley.</p>
+        </div>
+
+        <div class="reveal mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="flex flex-col rounded-2xl border border-cream/15 bg-white/5 p-7">
+            <h3 class="font-sans text-sm font-light uppercase tracking-widest text-med">Single Session</h3>
+            <p class="mt-4 font-display text-5xl">&pound;45</p>
+            <p class="mt-auto pt-6 font-body text-cream/70">50 minutes, one-to-one Reformer Pilates.</p>
+          </article>
+          <article class="flex flex-col rounded-2xl border border-cream/15 bg-white/5 p-7">
+            <h3 class="font-sans text-sm font-light uppercase tracking-widest text-med">Classical Equipment</h3>
+            <p class="mt-4 font-display text-5xl">&pound;55</p>
+            <p class="mt-auto pt-6 font-body text-cream/70">Classical Equipment Pilates session.</p>
+          </article>
+          <article class="relative flex flex-col rounded-2xl border border-med/60 bg-white/10 p-7">
+            <span class="absolute -top-3 left-7 rounded-full bg-med px-3 py-1 font-sans text-[0.65rem] font-medium uppercase tracking-widest text-dark">Popular</span>
+            <h3 class="font-sans text-sm font-light uppercase tracking-widest text-med">Pack of 4</h3>
+            <p class="mt-4 font-display text-5xl">&pound;170</p>
+            <p class="mt-auto pt-6 font-body text-cream/70">4 &times; 50 mins &mdash; just &pound;42.50 per session.</p>
+          </article>
+          <article class="flex flex-col rounded-2xl border border-cream/15 bg-white/5 p-7">
+            <h3 class="font-sans text-sm font-light uppercase tracking-widest text-med">Pack of 8</h3>
+            <p class="mt-4 font-display text-5xl">&pound;320</p>
+            <p class="mt-auto pt-6 font-body text-cream/70">8 &times; 50 mins &mdash; just &pound;40.00 per session.</p>
+          </article>
+        </div>
+
+        <div class="reveal mt-12 text-center">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-cream px-8 py-4 font-sans text-sm font-medium tracking-wide text-dark transition-colors hover:bg-white">
+            Enquire about a session
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div class="reveal">
+          <p class="eyebrow mb-4 font-sans text-xs font-light uppercase text-deep">Contact</p>
+          <h2 class="font-display text-4xl font-medium leading-tight text-dark sm:text-5xl">
+            Let&apos;s begin your journey
+          </h2>
+          <p class="mt-6 max-w-md font-body text-lg leading-relaxed text-dark/80">
+            Whether you&apos;re completely new to Pilates or returning after time away, I&apos;d love
+            to hear from you. Send a message and I&apos;ll be in touch to arrange your first session.
+          </p>
+
+          <div class="mt-10 space-y-4 font-body text-dark/80">
+            <p class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-pale text-deep" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+              </span>
+              Sharpthorne, West Sussex
+            </p>
+          </div>
+
+          <!-- Social -->
+          <div class="mt-10">
+            <p class="font-sans text-xs font-light uppercase tracking-widest text-dark/50">Follow along</p>
+            <div class="mt-4 flex gap-3">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Bluebell Pilates on Instagram" class="flex h-11 w-11 items-center justify-center rounded-full bg-dark text-cream transition-colors hover:bg-deep">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1a3.5 3.5 0 0 0-.8-1.3 3.5 3.5 0 0 0-1.3-.8c-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2Zm6.2-8.2a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z" /></svg>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Bluebell Pilates on Facebook" class="flex h-11 w-11 items-center justify-center rounded-full bg-dark text-cream transition-colors hover:bg-deep">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form: static-friendly, opens the visitor's email client with details pre-filled -->
+        <form id="contact-form" class="reveal rounded-2xl bg-white p-8 shadow-sm ring-1 ring-med/20 sm:p-10">
+          <div class="grid gap-5">
+            <div>
+              <label for="name" class="mb-2 block font-sans text-sm font-light text-dark">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-lg border border-med/40 bg-cream/40 px-4 py-3 font-body text-dark outline-none transition focus:border-deep focus:ring-2 focus:ring-deep/30" />
+            </div>
+            <div>
+              <label for="email" class="mb-2 block font-sans text-sm font-light text-dark">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-lg border border-med/40 bg-cream/40 px-4 py-3 font-body text-dark outline-none transition focus:border-deep focus:ring-2 focus:ring-deep/30" />
+            </div>
+            <div>
+              <label for="phone" class="mb-2 block font-sans text-sm font-light text-dark">Telephone <span class="text-dark/40">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" class="w-full rounded-lg border border-med/40 bg-cream/40 px-4 py-3 font-body text-dark outline-none transition focus:border-deep focus:ring-2 focus:ring-deep/30" />
+            </div>
+            <div>
+              <label for="message" class="mb-2 block font-sans text-sm font-light text-dark">Message</label>
+              <textarea id="message" name="message" rows="4" required class="w-full resize-y rounded-lg border border-med/40 bg-cream/40 px-4 py-3 font-body text-dark outline-none transition focus:border-deep focus:ring-2 focus:ring-deep/30"></textarea>
+            </div>
+            <button type="submit" class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-dark px-8 py-4 font-sans text-sm font-medium tracking-wide text-cream transition-colors hover:bg-deep">
+              Send message
+            </button>
+            <p id="form-note" class="hidden font-body text-sm text-deep" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-dark text-cream">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-12 text-center lg:flex-row lg:justify-between lg:px-10 lg:text-left">
+      <div>
+        <p class="font-display text-2xl"><span class="font-medium">bluebell</span><span class="italic text-med">pilates</span></p>
+        <p class="mt-1 font-sans text-xs font-light uppercase tracking-widest text-cream/50">Balance &middot; Strength &middot; Bloom</p>
+      </div>
+
+      <div class="flex gap-3">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Bluebell Pilates on Instagram" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-cream transition-colors hover:bg-white/20">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 4.9a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8Zm0 8a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Zm6.2-8.2a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z" /></svg>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Bluebell Pilates on Facebook" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-cream transition-colors hover:bg-white/20">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z" /></svg>
+        </a>
+      </div>
+
+      <p class="font-body text-sm text-cream/60">
+        &copy; <span id="year"></span> Bluebell Pilates. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center bg-dark/90 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Enlarged gallery image">
+    <button id="lightbox-close" class="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-cream transition-colors hover:bg-white/20" aria-label="Close enlarged image">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+    </button>
+    <button id="lightbox-prev" class="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-cream transition-colors hover:bg-white/20 sm:left-6" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-full rounded-lg object-contain shadow-2xl" />
+    <button id="lightbox-next" class="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-cream transition-colors hover:bg-white/20 sm:right-6" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+    </button>
+  </div>
+
+  <script>
+    // Current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Sticky header background on scroll
+    const header = document.getElementById("site-header");
+    const onScroll = () => {
+      if (window.scrollY > 24) {
+        header.classList.add("bg-cream/90", "backdrop-blur", "shadow-sm");
+      } else {
+        header.classList.remove("bg-cream/90", "backdrop-blur", "shadow-sm");
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Mobile menu
+    const toggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMobile = () => {
+      mobileMenu.classList.add("hidden");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    };
+    toggle.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      if (isOpen) {
+        closeMobile();
+      } else {
+        mobileMenu.classList.remove("hidden");
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close menu");
+      }
+    });
+    document.querySelectorAll("[data-mobile-link]").forEach((link) =>
+      link.addEventListener("click", closeMobile)
+    );
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealEls.forEach((el) => io.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("is-visible"));
+    }
+
+    // Lightbox gallery
+    const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const btnClose = document.getElementById("lightbox-close");
+    const btnPrev = document.getElementById("lightbox-prev");
+    const btnNext = document.getElementById("lightbox-next");
+    let currentIndex = 0;
+
+    const showImage = (index) => {
+      currentIndex = (index + galleryItems.length) % galleryItems.length;
+      const item = galleryItems[currentIndex];
+      const src = item.getAttribute("data-full");
+      const img = item.querySelector("img");
+      lightboxImg.src = src;
+      lightboxImg.alt = img ? img.alt : "Enlarged gallery image";
+    };
+
+    const openLightbox = (index) => {
+      showImage(index);
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+      document.body.style.overflow = "hidden";
+      btnClose.focus();
+    };
+    const closeLightbox = () => {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+    };
+
+    galleryItems.forEach((item, index) =>
+      item.addEventListener("click", () => openLightbox(index))
+    );
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", () => showImage(currentIndex - 1));
+    btnNext.addEventListener("click", () => showImage(currentIndex + 1));
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.classList.contains("hidden")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+      if (e.key === "ArrowRight") showImage(currentIndex + 1);
+    });
+
+    // Contact form -> compose an email (no backend needed for static hosting).
+    // Replace the address below with the studio's real inbox.
+    const CONTACT_EMAIL = "hello@bluebellpilates.co.uk";
+    const form = document.getElementById("contact-form");
+    const formNote = document.getElementById("form-note");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const message = form.message.value.trim();
+      const subject = encodeURIComponent(`Pilates enquiry from ${name || "website visitor"}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nTelephone: ${phone || "—"}\n\n${message}`
+      );
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      formNote.textContent = "Opening your email app to send this message…";
+      formNote.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
